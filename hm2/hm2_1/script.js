@@ -12,7 +12,7 @@ function forEach(arr, func) {
   
 }
 
-// forEach(array, item => console.log(item));
+//forEach(array, item => console.log(item));
 
 //////// filter ////////
 
@@ -67,17 +67,30 @@ let sqare = map(array, item => item*item);
 
 function slice(arr, func) {
   var res = [],
-      resI = 0;
-  for(var i = func[0]; i <= func[1]; i++) {
-    res[resI] = arr[i];
-    resI++;
+      resI = 0,
+      i;
+  if(func[0] > 0) {
+    for(i = func[0]; i <= func[1]; i++) {
+      res[resI] = arr[i];
+      resI++;
+    }
+  } else {
+    var lengthOfArray = arr.length - 1,
+        plus = -(func[0]);
+    
+    
+    for(i = lengthOfArray; i >= plus; i--) {
+      res[resI] = arr[lengthOfArray - resI];
+      resI++;
+    }
   }
   
-  return res;
+  
+  return res.reverse();
 }
 
-let cut = slice(array, [1,3]);
-// console.log(cut);
+let cut = slice(array, [-3,3]);
+ console.log(cut);
 
 
 //////// reduce ////////
@@ -132,7 +145,7 @@ function splice(args) {
     
     arr = result;
   } else {
-    console.log(forInsert);
+    //console.log(forInsert);
   }
         
   return arr;
