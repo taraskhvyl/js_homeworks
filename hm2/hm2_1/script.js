@@ -68,30 +68,28 @@ let sqare = map(array, item => item*item);
 function slice(arr, func) {
   var res = [],
       resI = 0,
-      i;
-  if(func[0] > 0) {
-    for(i = func[0]; i <= func[1]; i++) {
-      res[resI] = arr[i];
-      resI++;
-    }
-  } else {
-    var lengthOfArray = arr.length,
-        start = func[0] + lengthOfArray;
-    
-    
-    for(i = start; i < lengthOfArray; i++) {
-      res[resI] = arr[i];
-      resI++;
-    }
-  }
+      start,
+      finish,
+      lengthOfArray = arr.length;
   
+  if(func[0] > 0) {
+    start = func[0];
+    finish = func[1] + func[0];
+  } else {
+    start = func[0] + lengthOfArray;
+    finish = lengthOfArray;
+  }
+    
+  for(var i = start; i < finish; i++) {
+      res[resI] = arr[i];
+      resI++;
+  }
   
   return res;
 }
 
-let cut = slice(array, [-3,3]);
- console.log(cut);
-
+let cut = slice(array, [3,2]);
+console.log(cut);
 
 //////// reduce ////////
 
