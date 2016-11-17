@@ -1,8 +1,7 @@
 function prepend(container, newElement) {
-	var currentElement = container,
-  		content = newElement +  document.querySelector(currentElement).innerHTML;
-  		
-  	document.querySelector(currentElement).innerHTML = content;
+  var currentElement = document.querySelector(container),
+      content = newElement +  currentElement.innerHTML;
+  currentElement.innerHTML = content;
 }
 
 prepend('#container', '<p>Привет,</p>');
