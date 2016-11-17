@@ -75,18 +75,18 @@ function slice(arr, func) {
       resI++;
     }
   } else {
-    var lengthOfArray = arr.length - 1,
-        plus = -(func[0]);
+    var lengthOfArray = arr.length,
+        start = func[0] + lengthOfArray;
     
     
-    for(i = lengthOfArray; i >= plus; i--) {
-      res[resI] = arr[lengthOfArray - resI];
+    for(i = start; i < lengthOfArray; i++) {
+      res[resI] = arr[i];
       resI++;
     }
   }
   
   
-  return res.reverse();
+  return res;
 }
 
 let cut = slice(array, [-3,3]);
