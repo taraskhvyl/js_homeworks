@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8">
+		<title>Аккордеон</title>
+		<script src="script.js"></script>
+		<style>
+			.accordeon {
+				max-width: 500px;
+			}
+			.accordeon__item {
+				background: #fff;
+				border-radius: 5px;
+				margin-bottom: 15px;
+				overflow: hidden;
+			}
+			.accordeon__item_heading {
+				padding: 10px 5px;
+				border: 1px solid #ccc;
+				border-radius: 5px;
+				cursor: pointer;
+			}
+			.accordeon__item_content {
+				padding: 10px 5px;
+				border: 1px solid #ccc;
+				margin-top: -2px;
+				border-top: 0;
+				border-radius: 5px;
+				display: none;
+			}
+			.accordeon__item_content.open {
+				display: block;
+			}
+		</style>
+	</head>
+	<body>
+		<div class="accordeon">
+			<div class="accordeon__item">
+				<div class="accordeon__item_heading">Заголовок 1</div>
+				<div class="accordeon__item_content">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eum, fuga totam. Repellat molestiae at explicabo omnis perspiciatis aliquid, asperiores unde dolor, ipsam velit perferendis, animi, assumenda. Accusamus placeat natus adipisci.</div>
+			</div>
+			<div class="accordeon__item">
+				<div class="accordeon__item_heading">Заголовок 2</div>
+				<div class="accordeon__item_content">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dignissimos doloremque blanditiis animi itaque ipsa magnam commodi tempore ut unde sed. Corrupti perferendis eligendi ea recusandae aliquam corporis dolores, adipisci repellat?</div>
+			</div>
+			<div class="accordeon__item">
+				<div class="accordeon__item_heading">Заголовок 3</div>
+				<div class="accordeon__item_content">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eius ad repellendus tenetur accusantium animi, aliquid, suscipit facilis dolorum molestiae, laboriosam error numquam quo repudiandae tempora magni vero. Necessitatibus, sed, fuga!</div>
+			</div>
+		</div>
+	</body>
+</html>
