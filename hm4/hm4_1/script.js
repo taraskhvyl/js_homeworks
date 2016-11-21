@@ -16,14 +16,14 @@
           var allContents = document.querySelectorAll('.accordeon__item_content');
 
           // ищем открытые вкладки
-          [].forEach.call(allContents, function(single) {
-              var ifOpen = single.classList.contains('open');
+          for (var i = 0; i < allContents.length; i++) {
+              var ifOpen = allContents[i].classList.contains('open');
 
               console.log(ifOpen);
               if (ifOpen === true) {
-                  single.classList.remove('open');
+                  allContents[i].classList.remove('open');
               }
-          });
+          }
           elem.className += ' open';
       }
   }
