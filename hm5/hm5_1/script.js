@@ -1,4 +1,5 @@
 let timer = function (seconds) {
+<<<<<<< HEAD
 	return {
 		then : 
 			function (result) {
@@ -13,4 +14,12 @@ let timer = function (seconds) {
 	}
 }
 
+=======
+	return new Promise((resolve) => {
+		setTimeout(() => {
+			resolve();
+		}, seconds); 
+	});
+}
+>>>>>>> hm5_1
 timer(3000).then(() => console.log('я вывелась через 3 секунды'));
