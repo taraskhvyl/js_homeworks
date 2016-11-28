@@ -46,15 +46,8 @@ sortCities('https://raw.githubusercontent.com/smelukov/citiesTest/master/cities.
 			
 			container.innerHTML = contentPaste;
 		},
-    error => console.log(error)
+    	error => console.log(error)
 	);
-
-
-function successImport(data) {
-	for (let i = 0; i < data.length; i++) {
-		data.compare(i, i+1);
-	}
-}
 
 
 		
