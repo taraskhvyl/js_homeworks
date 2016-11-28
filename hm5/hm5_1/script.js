@@ -5,5 +5,4 @@ let timer = function (seconds) {
 		}, seconds); 
 	});
 }
-
 timer(3000).then(() => console.log('я вывелась через 3 секунды'));
