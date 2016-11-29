@@ -1,5 +1,10 @@
-let cookies = listCookies();
-container.innerHTML = cookies;
+window.onload = init();
+
+function init() {
+  let cookies = listCookies();
+  container.innerHTML = cookies;
+}
+
 
 // создаем таблицу с куками
 function listCookies() {
@@ -13,17 +18,17 @@ function listCookies() {
     return content;
 }
 
-let buttons = document.getElementsByClassName('deleteCookie');
-for(let b = 0; b < buttons.length; b++) {
-  buttons[b].addEventListener('click', function(event) {
+document.body.addEventListener('click', function(event) {
+  let target = event.target;
+  if(target.classList.contains('deleteCookie')) {
     let target = event.target;
     
     if (target.hasAttribute("data-cookie")) {
-    	dataAttr = target.dataset.cookie;
+      dataAttr = target.dataset.cookie;
       confirmDelete(dataAttr);
-		}
-  });
-}
+    }
+  }
+})
 
 // вызов конфирма
 function confirmDelete(cookie) {
