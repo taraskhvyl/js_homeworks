@@ -37,11 +37,8 @@ sortCities('https://raw.githubusercontent.com/smelukov/citiesTest/master/cities.
                 // a должно быть равным b
                 return 0;
             });
-            let theTemplateScript = cities.innerHTML,
-                theTemplate = Handlebars.compile(theTemplateScript),
-                theCompiledHtml = theTemplate(response);
+            insertHandle(response);
 
-            insert.innerHTML = theCompiledHtml;
             return response;
         },
         error => console.log(error)
@@ -54,20 +51,25 @@ sortCities('https://raw.githubusercontent.com/smelukov/citiesTest/master/cities.
                 for (let prop in response) {
                     let city = response[prop].name;
                     if (city.toLowerCase().indexOf(val) !== -1) {
-                        newArray.push(city);
+                        newArray.push(response[prop]);
                     }
                 }
 
-                for (let el = 0; el < newArray.length; el++) {
-                    forInsert += '<p>' + newArray[el] + '</p>';
-                }
-
-                if (forInsert === '') {
+                console.log(newArray);
+                if (forInsert == null) {
                     insert.innerHTML = 'ничего не найдено';
                 } else {
-                    insert.innerHTML = forInsert;
+                    insertHandle(newArray);
                 }
 
             };
         }
     )
+
+function insertHandle(arr) {
+    let theTemplateScript = cities.innerHTML,
+        theTemplate = Handlebars.compile(theTemplateScript),
+        theCompiledHtml = theTemplate(arr);
+
+        insert.innerHTML = theCompiledHtml;
+}
