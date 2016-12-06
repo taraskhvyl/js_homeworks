@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width">
+    <title>JS Bin</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.0.6/handlebars.min.js"></script>
+    <script src="script.js"></script>
+</head>
+
+<body>
+    <div id="container">
+        <script id="cities" type="text/x-handlebars-template">
+            {{#each this}}
+              <p>{{name}}</p>
+            {{/each}}
+        </script>
+    </div>
+    <input type="text" placeholder="не вводите сюда ничего" id="inputInsert">
+    <div id="insert"></div>
+</body>
+
+</html>
